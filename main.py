@@ -160,7 +160,7 @@ num_lines = 100
 
 
 ## just plot first pic
-
+#
 # muProf = []
 # RegCol = "#D81B60"#"#D55E00"
 # fig, ax1 = plt.subplots()
@@ -169,11 +169,11 @@ num_lines = 100
 # #ax2.spines[:].set_visible(False)
 # #ax2.set_xticks([])
 # tru = ax1.plot(VMR_O3,height_values,marker = 'o',markerfacecolor = 'k', color = 'k' , label = 'true profile', zorder=1 ,linewidth = 1.5, markersize =7)
-# i = 0
-# p2 = ax1.plot(O3Res[i, :], height_values, color=ResCol, marker='+', markersize=1, linewidth=0.25, label = 'sample ' + str(i))
+# #i = 0
+# #p2 = ax1.plot(O3Res[i, :], height_values, color=ResCol, marker='+', markersize=1, linewidth=0.25, label = 'sample ' + str(i))
 #
-#
-# ax1.legend(handles = [tru[0],p2[0], data], loc = "upper right")
+# #ax1.legend(handles = [tru[0],p2[0], data], loc = "upper right")
+# ax1.legend(handles = [tru[0], data], loc = "upper right")
 # ax2.set_xlabel(r'Spectral Ozone radiance in $\frac{W}{m^2 sr} \times \frac{1}{\frac{1}{cm}}$',labelpad=10 )# color =dataCol,
 # #ax2.set_xlabel(r'Spectral radiance in $\frac{\text{W } \text{cm}}{\text{m}^2 \text{ sr}} $',labelpad=10)# color =dataCol,
 #
@@ -184,7 +184,7 @@ num_lines = 100
 #
 # ax1.set_xlim(np.min(O3Res), np.max(O3Res))
 # ax1.set_ylim(height_values[0],height_values[-1])
-# plt.savefig('/home/lennartgolks/PycharmProjects/animation/firstNonLin.png', dpi=100)
+# plt.savefig('/home/lennartgolks/PycharmProjects/animation/firstData.png', dpi=100)
 #
 # #plt.show()
 #
@@ -217,7 +217,7 @@ for j in  range(1,num_lines):
 
     ax1.set_xlabel('Ozone Mixing Ratio in ppm')
     ax1.set_ylabel('Height in km')
-    ax1.set_title('SNR 40')
+    ax1.set_title('SNR 60')
     lab = 'sample' + str(j).zfill(3)
 
     ax1.set_xlim(np.min(O3Res), np.max(O3Res))
@@ -236,7 +236,7 @@ from PIL import Image
 
 # filepaths
 fp_in = "/home/lennartgolks/PycharmProjects/animation/GIF/*.png"
-fp_out = "SNR40NonLinear.gif"
+fp_out = "SNR60NonLinear.gif"
 
 # use exit stack to automatically close opened images
 with contextlib.ExitStack() as stack:
